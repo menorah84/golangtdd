@@ -1,6 +1,6 @@
 package main
 
-func Sum(numbers [5]int) int {
+func Sum(numbers []int) int {
 	
 	sum := 0
 	
@@ -11,3 +11,14 @@ func Sum(numbers [5]int) int {
 	return sum
 	
 }
+
+func SumAll(numbersToSum ...[]int) []int {
+	lengthOfNumbers := len(numbersToSum)
+	sums := make([]int, lengthOfNumbers)
+	
+	for i, numbers := range numbersToSum {
+		sums[i] = Sum(numbers)
+	}
+	
+	return sums
+} 
